@@ -25,7 +25,7 @@ mv kops-linux-amd64 /usr/local/bin/kops
 aws s3api create-bucket --bucket djibril-kops-testbkt143333.k8s.local --region us-east-1 --create-bucket-configuration LocationConstraint=us-east-1
 aws s3api put-bucket-versioning --bucket djibril-kops-testbkt143333.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
 export KOPS_STATE_STORE=s3://djibril-kops-testbkt143333.k8s.local
-kops create cluster --name=djibril.k8s.local --zones=us-east-1a,us-east-1b --control-plane-count=1 --control-plane-size=t3.medium --node-count=2 --node-size=t3.small --node-volume-size=20 --control-plane-volume-size=20 --ssh-public-key=mykey.pub --image=ami-02d26659fd82cf299 --networking=calico --topology=public
+kops create cluster --name=djibril.k8s.local --zones=us-east-1a,us-east-1b --control-plane-count=1 --control-plane-size=t3.medium --node-count=2 --node-size=t3.small --node-volume-size=20 --control-plane-volume-size=20 --ssh-public-key=mykey.pub --image=ami-0f8a61b66d1accaee --networking=calico --topology=public
 kops update cluster --name djibril.k8s.local --yes --admin
 
 
